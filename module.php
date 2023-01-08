@@ -11,6 +11,7 @@ use Fisharebest\Webtrees\View;
 use Fisharebest\Webtrees\Registry;
 use Fisharebest\Webtrees\FlashMessages;
 use Psr\Http\Message\ResponseInterface;
+use Fisharebest\Localization\Translation;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Fisharebest\Webtrees\Module\AbstractModule;
@@ -48,7 +49,7 @@ return new class extends AbstractModule implements ModuleCustomInterface, Module
     public function title(): string
     {
         /* I18N: Name of a module */
-        return $this->getPreference('footer-text', I18N::translate('Simple footer link') . ' ' . (int)substr($this->name(), -2, 1));
+        return $this->getPreference('footer-text', I18N::translate('Simple footer module') . ' ' . (int)substr($this->name(), -2, 1));
     }
 
     /**
@@ -59,7 +60,7 @@ return new class extends AbstractModule implements ModuleCustomInterface, Module
     public function description(): string
     {
         /* I18N: Description of the “Simple Footer” module */
-        return I18N::translate('Easily add an extra footer item and page to your webtrees website.');
+        return I18N::translate('Add an extra footer and page.');
     }
 
     /**
@@ -222,5 +223,19 @@ return new class extends AbstractModule implements ModuleCustomInterface, Module
     public function getSlug($string): String
     {
         return preg_replace('/\s+/', '-', strtolower(preg_replace("/&([a-z])[a-z]+;/i", "$1", htmlentities($string))));
+    }
+
+    /**
+     * Additional/updated translations.
+     *
+     * @param string $language
+     *
+     * @return array<string>
+     */
+    public function customTranslations(string $language): array
+    {
+        $file = $this->resourcesFolder() . 'lang/' . $language . '.php';
+
+        return file_exists($file) ? (new Translation($file))->asArray() : [];
     }
 };
