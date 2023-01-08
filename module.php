@@ -38,6 +38,7 @@ return new class extends AbstractModule implements ModuleCustomInterface, Module
     public const CUSTOM_VERSION = '1.0';
     public const GITHUB_REPO = 'webtrees-simple-footer';
     public const AUTHOR_WEBSITE = 'https://justcarmen.nl';
+    public const CUSTOM_SUPPORT_URL = self::AUTHOR_WEBSITE . '/modules-webtrees-2/simple-footer/';
 
     /**
      * How should this module be identified in the control panel, etc.?
@@ -105,8 +106,9 @@ return new class extends AbstractModule implements ModuleCustomInterface, Module
      */
     public function customModuleSupportUrl(): string
     {
-        return self::AUTHOR_WEBSITE;
+        return self::CUSTOM_SUPPORT_URL;
     }
+
 
     /**
      * Bootstrap the module
