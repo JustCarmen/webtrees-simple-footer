@@ -1,0 +1,15 @@
+<?php
+
+use Fisharebest\Webtrees\I18N;
+
+?>
+
+<div class="wt-footer jc-simple-footer text-center my-2">
+    <?php if ($link): ?>
+    <a href="<?= e($url) ?>">
+        <?= I18N::translate($footer_text) ?>
+    </a>
+    <?php else: ?>
+        <?= I18N::translate($footer_text) ?>
+    <?php endif ?>
+</div>
