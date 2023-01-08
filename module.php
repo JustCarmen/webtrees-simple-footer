@@ -32,7 +32,7 @@ return new class extends AbstractModule implements ModuleCustomInterface, Module
     use ModuleFooterTrait;
     use ModuleConfigTrait;
 
-    protected const ROUTE_URL   = '/tree/{tree}/jc-simple-footer-1/{link}';
+    protected const ROUTE_URL   = '/tree/{tree}/jc-simple-footer-1/{footer}';
 
     // Module constants
     public const CUSTOM_AUTHOR = 'JustCarmen';
