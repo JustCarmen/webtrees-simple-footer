@@ -32,6 +32,6 @@ Bugs and feature requests
 -------------------------
 This is a simple module and provided as is. However, if you experience any bugs you can [create a new issue on GitHub][3]. Since this is a simple module, I will be reluctant to accept feature requests.
 
- [1]: https://github.com/JustCarmen/webtrees-simple-menu/releases/latest
+ [1]: https://github.com/JustCarmen/webtrees-simple-footer/releases/latest
  [2]: https://webtrees.github.io/download/
- [3]: https://github.com/JustCarmen/webtrees-simple-menu/issues?state=open
+ [3]: https://github.com/JustCarmen/webtrees-simple-footer/issues?state=open
