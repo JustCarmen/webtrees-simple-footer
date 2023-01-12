@@ -1,11 +1,12 @@
 <?php
 
 use Fisharebest\Webtrees\Http\RequestHandlers\ControlPanel;
+use Fisharebest\Webtrees\Http\RequestHandlers\ModulesFootersPage;
 use Fisharebest\Webtrees\I18N;
 
 ?>
 
-<?= view('components/breadcrumbs', ['links' => [route(ControlPanel::class) => I18N::translate('Control panel'), $title]]) ?>
+<?= view('components/breadcrumbs', ['links' => [route(ControlPanel::class) => I18N::translate('Control panel'), route(ModulesFootersPage::class) => I18N::translate('Footers'), $title]]) ?>
 
 <h1><?= $title ?></h1>
 
