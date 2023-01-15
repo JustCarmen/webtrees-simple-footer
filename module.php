@@ -32,7 +32,7 @@ return new class extends AbstractModule implements ModuleCustomInterface, Module
     use ModuleFooterTrait;
     use ModuleConfigTrait;
 
-    protected const ROUTE_URL   = '/tree/{tree}/jc-simple-footer-{footer}/{page}';
+    protected const ROUTE_URL   = '/tree/{tree}/jc-simple-footer-1/{footer}';
 
     // Module constants
     public const CUSTOM_AUTHOR = 'JustCarmen';
@@ -183,9 +183,8 @@ return new class extends AbstractModule implements ModuleCustomInterface, Module
         $tree = $request->getAttribute('tree');
 
         $url = route(self::class, [
-            'tree'    => $tree ? $tree->name() : null,
-            'footer'  => $this->getSlug($this->getPreference('footer-text')),
-            'page'    => $this->getSlug($this->getPreference('page-title'))
+            'tree'      => $tree ? $tree->name() : null,
+            'footer'    => $this->getSlug($this->getPreference('footer-text'))
         ]);
 
         return view($this->name() . '::footer', [
