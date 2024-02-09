@@ -49,7 +49,11 @@ return new class extends AbstractModule implements ModuleCustomInterface, Module
     public function title(): string
     {
         /* I18N: Name of a module */
-        return $this->getPreference('footer-text', I18N::translate('Simple footer module'));
+        if ($this->getPreference('footer-text')){
+            return I18N::translate('Simple footer module') . ' - ' . $this->getPreference('footer-text');
+        } else {
+            return I18N::translate('Simple footer module');
+        }
     }
 
     /**
